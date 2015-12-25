@@ -1,3 +1,26 @@
 #!/bin/bash
-wmctrl -x -a "$1" || $2
+set -x
 
+DESIRED_WINDOW=$(xdotool search --limit 1 --desktop 0 "$1")
+NOT_FOUND=$?
+if [[ "${NOT_FOUND}" == 1 ]]
+  then
+  # application not running, run app
+  "$2"
+else
+  ACTIVE_WINDOW=$(xdotool getactivewindow)
+  if [[ "${DESIRED_WINDOW}" == ${ACTIVE_WINDOW} ]]
+    then
+      xdotool windowminimize "${ACTIVE_WINDOW}"
+  else
+    xdotool windowactivate "${DESIRED_WINDOW}"
+  fi
+fi
+# CURRENT_WINDOW=$(wmctrl -lp | grep $(xprop -root | grep _NET_ACTIVE_WINDOW | head -1 | awk '{print $5}' | sed 's/,//' | sed 's/^0x/0x0/'))
+# wmctrl -x -a "$1" || $2
+# NEW_WINDOW=$(wmctrl -lp | grep $(xprop -root | grep _NET_ACTIVE_WINDOW | head -1 | awk '{print $5}' | sed 's/,//' | sed 's/^0x/0x0/'))
+# echo $CURRENT_WINDOW
+# echo $NEW_WINDOW
+
+
+# xdotool search --class firefox windowactivate
