@@ -8,3 +8,6 @@ Sample of usage:
 ```bash
 /home/disfinder/opt/run-or-raise atom atom
 ```
+
+## XFCE4 keyboard shortcuts
+they can be set via script, this is wonderfull!
