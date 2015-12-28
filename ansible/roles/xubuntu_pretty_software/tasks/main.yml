@@ -1,0 +1,29 @@
+---
+# tasks file for xubuntu_pretty_software
+- name:  istall some usefull packages
+  apt:
+    name: {{ item }}
+    state: present
+  with_items:
+    - xdotool
+    - autojump
+    - mc
+    - terminator
+    - gparted
+    - pv
+    - screen
+    - chromium-browser
+    - tigervnc-viewer
+    - viberwrapper-indicator
+    - unetbootin
+
+- name: Python modules
+  easy_install:
+    name: {{ item }}
+    state: present
+  with_items:
+    - httpie
+
+
+    # - popper
+    # - jenkins
