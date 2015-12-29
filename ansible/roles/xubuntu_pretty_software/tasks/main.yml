@@ -2,7 +2,7 @@
 # tasks file for xubuntu_pretty_software
 - name:  istall some usefull packages
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - xdotool
@@ -19,10 +19,29 @@
 
 - name: Python modules
   easy_install:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - httpie
+
+
+- name: add Equalizer PPA
+  sudo: yes
+  tags:
+    - debug3
+  apt_repository:
+    repo: 'ppa:nilarimogard/webupd8'
+    update_cache: yes
+    state: present
+
+- name:  istall Equalizer
+  sudo: yes
+  tags:
+    - debug3
+  apt:
+    name: pulseaudio-equalizer
+    state: present
+
 
 
     # - popper
