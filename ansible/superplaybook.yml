@@ -1,0 +1,7 @@
+- name: "CQ Author"
+  gather_facts: no
+  connection: local
+  hosts:
+    - all
+  roles:
+  - { role: xubuntu_pretty_software, tags: ['install'] }
