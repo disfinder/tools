@@ -1,6 +1,7 @@
 ---
 # tasks file for xubuntu_pretty_software
 - name:  istall some usefull packages
+  sudo: yes
   apt:
     name: "{{ item }}"
     state: present
@@ -18,6 +19,7 @@
     - unetbootin
 
 - name: Python modules
+  sudo: yes
   easy_install:
     name: "{{ item }}"
     state: present
