@@ -14,6 +14,6 @@
   - name: Install xubuntu software
     role: xubuntu_pretty_software
     tags: soft
-  # - name: Update XFCE hotkeys configuration
-  #   role: xfce_hotkeys
-  #   tags: hotkeys
+  - name: Update XFCE hotkeys configuration
+    role: xfce_hotkeys
+    tags: hotkeys
