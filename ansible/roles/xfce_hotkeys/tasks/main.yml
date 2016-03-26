@@ -8,19 +8,4 @@
 - name: Create raise keys
   command: "{{ xfconf_execute }} {{ xconf_key_prefix }}/{{ item.key }} {{ xfconf_prop }} \"{{ raise_path }} {{ item.raise_search }} {{ item.raise_action }}\""
   with_items:
-    - raise_keys
-  with_items:
     - "{{ raise_keys }}"
-
-# - name: Create common keys
-#   debug:
-#     # msg: "{{ xfconf_execute }} {{ xconf_key_prefix }}/{{ item.key }} {{ xconf_prop }} {{ item.action }}"
-#     var: item
-#   with_items:
-#     - "{{ common_keys }}"
-#
-# - name: Create raise keys
-#   debug :
-#     msg: "{{ xfconf_execute }} {{ xconf_key_prefix }}/{{ item.key }} {{ xfconf_prop }} {{ raise_path }} {{ item.raise_search }} {{ item.raise_action }}"
-#   with_items:
-#     - "{{ raise_keys }}"
