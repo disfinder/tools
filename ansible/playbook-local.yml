@@ -2,6 +2,8 @@
 - name: "Local"
   hosts:
     - localhost
+  pre_tasks:
+  - include_vars: vars/vars.yml
   vars:
     user_binary_folder: "~/bin"
     user_scripts_folder: "{{ user_binary_folder}}/scripts"
@@ -11,7 +13,7 @@
   roles:
   - name: Deploy local scrips
     role: deploy_local_scripts
-    when: false
+    when: true
     tags: scripts
   - name: Install xubuntu software
     role: xubuntu_pretty_software
