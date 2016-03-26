@@ -1,20 +1,12 @@
 #!/bin/bash
-# ansible-playbook -i ./inventory/localhost playbook-local.yml
-
-# echo "Do you wish to perform ansible invocation?"
-# select yn in "Yes" "No"; do
-#     case $yn in
-#         Yes ) echo "yes"; break;;
-#         No ) exit;;
-#     esac
-# done
 
 # TOOLS_PERFORM_AUTO_DEPLOY
 if [ -z "$TOOLS_PERFORM_AUTO_DEPLOY" ]; then
   echo "No autodeploy";
 else
     if [ "$TOOLS_PERFORM_AUTO_DEPLOY" = true ]; then
-      echo "DEPLOY"
+      echo "Starting autodeploy"
+      ansible-playbook -i ./inventory/localhost playbook-local.yml
     else
       echo "Variavle set to false"
     fi

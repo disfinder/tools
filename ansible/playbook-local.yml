@@ -5,15 +5,19 @@
   vars:
     user_binary_folder: "~/bin"
     user_scripts_folder: "{{ user_binary_folder}}/scripts"
+    use_in_autodeploy: false
   connection: local
   gather_facts: no
   roles:
   - name: Deploy local scrips
     role: deploy_local_scripts
+    when: false
     tags: scripts
   - name: Install xubuntu software
     role: xubuntu_pretty_software
     tags: soft
+    when: false
   - name: Update XFCE hotkeys configuration
     role: xfce_hotkeys
     tags: hotkeys
+    when: false
