@@ -1,17 +1,24 @@
-- hosts: localhost
-  vars:
-    user_binary_folder: "~/opt"
+---
+# - hosts: localhost
+#   connection:
+#   vars:
+#     user_binary_folder: "~/bin"
 
 - name: "Local"
   hosts:
     - localhost
+  vars:
+    user_binary_folder: "~/bin"
+    user_scripts_folder: "{{ user_binary_folder}}/scripts"
+  connection: local
+  gather_facts: no
   roles:
-  # - name: Deploy local scrips
-  #   role: deploy_local_scripts
-  #   tags: scripts
+  - name: Deploy local scrips
+    role: deploy_local_scripts
+    tags: scripts
   # - name: Install xubuntu software
   #   role: xubuntu_pretty_software
   #   tags: soft
-  - name: Update XFCE hotkeys configuration
-    role: xfce_hotkeys
-    tags: hotkeys
+  # - name: Update XFCE hotkeys configuration
+  #   role: xfce_hotkeys
+  #   tags: hotkeys
