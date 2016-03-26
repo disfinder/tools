@@ -1,0 +1,2 @@
+#!/bin/bash
+wmctrl -x -a owabud.epam.com__owa.Chromium-browser || /usr/bin/chromium-browser "--app=https://owabud.epam.com/owa/#path=/mail"
