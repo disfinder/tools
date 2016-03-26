@@ -1,7 +1,7 @@
 ---
 # tasks file for xubuntu_pretty_software
 - name:  istall some usefull packages
-  sudo: yes
+  become: true
   apt:
     name: "{{ item }}"
     state: present
@@ -20,7 +20,7 @@
 
 
 - name: Python modules
-  sudo: yes
+  become: true
   easy_install:
     name: "{{ item }}"
     state: present
@@ -29,7 +29,7 @@
 
 
 - name: add Equalizer PPA
-  sudo: yes
+  become: true
   tags:
     - debug3
   apt_repository:
@@ -38,7 +38,7 @@
     state: present
 
 - name:  istall Equalizer
-  sudo: yes
+  become: true
   tags:
     - debug3
   apt:
