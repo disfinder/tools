@@ -1,4 +1,4 @@
-- name: "CQ Author"
+- name: "Local"
   gather_facts: no
   connection: local
   hosts:
