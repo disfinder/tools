@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ansible-playbook -i ./inventory/localhost playbook-local.yml
 
 echo "Do you wish to perform ansible invocation?"
