@@ -1,0 +1,11 @@
+---
+# tasks file for xfce_hotkeys
+- name: Create common keys
+  command:
+    "{{ xfconf_execute }} {{ xconf_key_prefix }}/{{ item.key }} {{ xconf.prop }} {{ item.action }}"
+
+- name: Create raise keys
+  command:
+    "{{ xfconf_execute }} {{ xconf_key_prefix }}/{{ item.key }} {{ xfconf_prop }} {{ raise_path }} {{ item.raise_search }} {{ item.raise_action }}"
+  with_items:
+    - raise_keys

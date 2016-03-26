@@ -1,0 +1,47 @@
+---
+# defaults file for xfce_hotkeys
+raise_path: "{{ user_binary_folder }}/run-or-raise"
+#!/bin/bash
+#path to your run-or-raise script
+# ROR_PATH="/home/disfinder/opt/run-or-raise"
+xfconf_execute: "xfconf-query --channel xfce4-keyboard-shortcuts --property"
+xfconf_prop: "--create --type string --set"
+xconf_key_prefix: "/commands/custom/"
+
+raise_keys:
+  - key: "<Super>w"
+    raise_search: "VirtualBox"
+    raise_action: "VirtualBox"
+  - key: "<Super>a"
+    raise_search: "atom"
+    raise_action: "atom"
+  - key: "<Super>bracketleft"
+    raise_search: "pac"
+    raise_action: "\"/usr/bin/pac\""
+  - key: "<Super>f"
+    raise_search: "firefox"
+    raise_action: "firefox"
+  - key: "<Super>k"
+    raise_search: "keepassx"
+    raise_action: "\"keepassx ~/Dropbox/key/ep.kdb\""
+  - key: "<Super>s"
+    raise_search: "skype"
+    raise_action: "\"skype\""
+  - key: "<Super>t"
+    raise_search: "terminator"
+    raise_action: "terminator"
+  - key: "XF86AudioNext"
+    raise_search: "chromium-browser"
+    raise_action: "chromium-browser"
+  - key: "XF86AudioPlay"
+    raise_search: "pavucontrol"
+    raise_action: "pavucontrol"
+  - key: "XF86AudioPrev"
+    raise_search: "audacious"
+    raise_action: "audacious"
+
+common_keys:
+  - key: "<Super>m"
+    action: "/home/disfinder/opt/run-or-raise.d/chromium-mail"
+  - key: "F12"
+    action: "/home/disfinder/opt/qurminator.sh"

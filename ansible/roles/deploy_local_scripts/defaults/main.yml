@@ -1,2 +1,7 @@
 ---
 # defaults file for ./deploy_local_scripts
+
+
+scripts_array:
+  - template:
+    dest: ""

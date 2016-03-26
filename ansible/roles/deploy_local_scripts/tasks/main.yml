@@ -1,2 +1,13 @@
 ---
 # tasks file for ./deploy_local_scripts
+- name: Create user binary folder
+  file:
+    dest: "{{ user_binary_folder }}"
+    state: directory
+
+- name: Template scripts
+  template:
+    src: "{{ item. }}"
+    dest: "{{ item. }}"
+  with_items:
+    - scripts_array
