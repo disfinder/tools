@@ -5,20 +5,6 @@
     dest: "{{ user_scripts_folder }}"
     state: directory
 
-# - name: debug
-#   tags:
-#     - debug3
-#   debug:
-#     var: item
-#   with_fileglob:
-#      - ../templates/*
-#
-# - name: debug
-#   tags:
-#     - debug3
-#   fail:
-#     msg: debug
-
 - name: Template scripts
   template:
     src: "{{ item }}"
