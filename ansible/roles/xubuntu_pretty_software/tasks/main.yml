@@ -14,9 +14,10 @@
     - pv
     - screen
     - chromium-browser
-    - tigervnc-viewer
     - viberwrapper-indicator
     - unetbootin
+# tigervnc-viewer not found, need some repo?
+
 
 - name: Python modules
   sudo: yes

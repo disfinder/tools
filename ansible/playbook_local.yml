@@ -1,9 +1,4 @@
 ---
-# - hosts: localhost
-#   connection:
-#   vars:
-#     user_binary_folder: "~/bin"
-
 - name: "Local"
   hosts:
     - localhost
@@ -16,9 +11,9 @@
   - name: Deploy local scrips
     role: deploy_local_scripts
     tags: scripts
-  # - name: Install xubuntu software
-  #   role: xubuntu_pretty_software
-  #   tags: soft
+  - name: Install xubuntu software
+    role: xubuntu_pretty_software
+    tags: soft
   # - name: Update XFCE hotkeys configuration
   #   role: xfce_hotkeys
   #   tags: hotkeys
