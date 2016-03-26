@@ -5,7 +5,7 @@
   vars:
     user_binary_folder: "~/bin"
     user_scripts_folder: "{{ user_binary_folder}}/scripts"
-    use_in_autodeploy: false
+    # use_in_autodeploy: false
   connection: local
   gather_facts: no
   roles:
