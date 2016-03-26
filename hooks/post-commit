@@ -6,7 +6,7 @@ if [ -z "$TOOLS_PERFORM_AUTO_DEPLOY" ]; then
 else
     if [ "$TOOLS_PERFORM_AUTO_DEPLOY" = true ]; then
       echo "Starting autodeploy"
-      ansible-playbook -i ./inventory/localhost playbook-local.yml
+      ansible-playbook -i ansible/inventory/localhost ansible/playbook-local.yml
     else
       echo "Variavle set to false"
     fi
