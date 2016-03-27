@@ -13,6 +13,24 @@ Sample of usage:
 ```bash
 /home/disfinder/opt/run-or-raise atom atom
 ```
+## Useful scripts
+such as terminator as quake terminal, linux suspend, and some other, mostly for use in following shortcuts section
 
 ## XFCE4 keyboard shortcuts
 they can be set via script, this is wonderfull!
+
+## configuration files
+- bash
+- screen
+- git
+
+With pretty colors and aliases!
+
+## post-commit hook
+for self-deploy (use `export TOOLS_PERFORM_AUTO_DEPLOY=true` variable)
+
+## ansible-plabook
+deploy to localhost easy with:
+```bash
+ansible-playbook -i inventory/localhost playbook-local.yml
+```
