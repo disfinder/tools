@@ -8,6 +8,6 @@ else
       echo "Starting autodeploy"
       ansible-playbook -i ansible/inventory/localhost ansible/playbook-local.yml
     else
-      echo "Variavle set to false"
+      echo "Variable set to false"
     fi
 fi
