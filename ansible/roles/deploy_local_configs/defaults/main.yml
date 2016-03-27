@@ -1,0 +1,41 @@
+---
+# defaults file for deploy_local_configs
+#etcetera_folder_name: "disfinder"
+user: "{{ lookup('env', 'USER') }}"
+local_bashrc_file: ".bashrc"
+user_home_dir: "~{{ user }}"
+#local_bash_profile: ".bash_profile"
+
+
+include:
+  comments: true
+  common_ubuntu: true
+  common: true
+  bindings: true
+  color: true
+  alias:
+    common: true
+    develop: true
+  completion: true
+  path:
+    develop: true
+  ps1: true
+
+
+ps1:
+  developer: true
+  color_root: true
+  gray_user: false
+  color_user: false
+  color_user_multiline: true
+
+
+################# Screen
+local_screenrc_file: ".screenrc"
+
+################# SSH
+ssh_config_dest_dir: "~{{ user }}/.ssh"
+local_ssh_config_file: "config"
+# ssh_config_lines: "{{ lookup('file', 'ssh_config') }}"
+
+local_gitconfig_file: .gitconfig
