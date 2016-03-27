@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # TOOLS_PERFORM_AUTO_DEPLOY
 if [ -z "$TOOLS_PERFORM_AUTO_DEPLOY" ]; then
   echo "No autodeploy";
