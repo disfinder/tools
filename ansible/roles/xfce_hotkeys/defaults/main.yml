@@ -10,6 +10,9 @@ xfconf_prop: "--create --type string --set"
 xconf_key_prefix: "/commands/custom"
 
 raise_keys:
+  - key: "<Super>c"
+    raise_search: "chrome"
+    raise_action: "google-chrome-stable"
   - key: "<Super>w"
     raise_search: "VirtualBox"
     raise_action: "VirtualBox"
