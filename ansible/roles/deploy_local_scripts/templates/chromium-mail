@@ -1,2 +1,18 @@
 #!/bin/bash
-wmctrl -x -a {{ ep_mail.name }} || /usr/bin/chromium-browser "--app={{ ep_mail.url }}/owa/#path=/mail"
+QT_TITLE="Outlook Web App"
+
+DESIRED_WINDOW=$(xdotool search --limit 1 --name "${QT_TITLE}")
+NOT_FOUND=$?
+if [[ "${NOT_FOUND}" == 1 ]]
+  then
+  # application not running, run app
+  /usr/bin/chromium-browser "--app={{ ep_mail.url }}/owa/#path=/mail"
+else
+  ACTIVE_WINDOW=$(xdotool getactivewindow)
+  if [[ "${DESIRED_WINDOW}" == ${ACTIVE_WINDOW} ]]
+    then
+      xdotool windowunmap "${ACTIVE_WINDOW}"
+  else
+    xdotool windowactivate "${DESIRED_WINDOW}"
+  fi
+fi
