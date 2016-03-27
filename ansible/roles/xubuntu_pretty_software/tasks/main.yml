@@ -1,0 +1,51 @@
+---
+# tasks file for xubuntu_pretty_software
+- name:  istall some usefull packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - xdotool
+    - autojump
+    - mc
+    - terminator
+    - gparted
+    - pv
+    - screen
+    - chromium-browser
+    - viberwrapper-indicator
+    - unetbootin
+# tigervnc-viewer not found, need some repo?
+
+
+- name: Python modules
+  become: true
+  easy_install:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - httpie
+
+
+- name: add Equalizer PPA
+  become: true
+  tags:
+    - debug3
+  apt_repository:
+    repo: 'ppa:nilarimogard/webupd8'
+    update_cache: yes
+    state: present
+
+- name:  istall Equalizer
+  become: true
+  tags:
+    - debug3
+  apt:
+    name: pulseaudio-equalizer
+    state: present
+
+
+
+    # - popper
+    # - jenkins

@@ -15,3 +15,4 @@ ${xfconf_execute} "/commands/custom/<Super>t"           ${xfconf_prop}  "/home/d
 ${xfconf_execute} "/commands/custom/XF86AudioNext"      ${xfconf_prop}  "/home/disfinder/opt/run-or-raise chromium-browser  chromium-browser"
 ${xfconf_execute} "/commands/custom/XF86AudioPlay"      ${xfconf_prop}  "/home/disfinder/opt/run-or-raise pavucontrol pavucontrol"
 ${xfconf_execute} "/commands/custom/XF86AudioPrev"      ${xfconf_prop}  "/home/disfinder/opt/run-or-raise audacious audacious"
+${xfconf_execute} "/commands/custom/F12"                ${xfconf_prop}  "/home/disfinder/opt/qurminator.sh"

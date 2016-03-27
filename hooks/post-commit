@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# TOOLS_PERFORM_AUTO_DEPLOY
+if [ -z "$TOOLS_PERFORM_AUTO_DEPLOY" ]; then
+  echo "No autodeploy";
+else
+    if [ "$TOOLS_PERFORM_AUTO_DEPLOY" = true ]; then
+      echo "Starting autodeploy"
+      ansible-playbook -i ansible/inventory/localhost ansible/playbook-local.yml
+    else
+      echo "Variavle set to false"
+    fi
+fi

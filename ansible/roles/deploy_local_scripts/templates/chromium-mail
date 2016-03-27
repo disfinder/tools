@@ -1,0 +1,2 @@
+#!/bin/bash
+wmctrl -x -a {{ ep_mail.name }} || /usr/bin/chromium-browser "--app={{ ep_mail.url }}/owa/#path=/mail"

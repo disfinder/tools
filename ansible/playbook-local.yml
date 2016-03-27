@@ -1,0 +1,29 @@
+---
+- name: "Local"
+  hosts:
+    - localhost
+  pre_tasks:
+  - include_vars: vars/vars.yml
+  vars:
+    user_binary_folder: "~/bin"
+    user_scripts_folder: "{{ user_binary_folder}}/scripts"
+    use_in_autodeploy: false
+  connection: local
+  gather_facts: no
+  roles:
+  - name: Deploy local scrips
+    role: deploy_local_scripts
+    when: use_in_autodeploy
+    tags: scripts
+  - name: Install xubuntu software
+    role: xubuntu_pretty_software
+    tags: soft
+    when: use_in_autodeploy
+  - name: Update XFCE hotkeys configuration
+    role: xfce_hotkeys
+    tags: hotkeys
+    when: use_in_autodeploy
+  - name: Deploy local configs
+    role: deploy_local_configs
+    tags: configs
+    when: use_in_autodeploy
