@@ -1,0 +1,15 @@
+---
+- name: "Load Vars"
+  hosts:
+    - localhost
+  connection: local
+- vars:
+    mes: "Some#Text%With$Special^Symbols"
+  hosts: all
+  gather_facts: no
+  connection: local
+  tags:
+    - always
+  pre_tasks:
+    - name: test
+      debug: msg={{ mes }}
