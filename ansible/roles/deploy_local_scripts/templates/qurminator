@@ -2,10 +2,18 @@
 set -x
 
 QT_TITLE="aketerminal"
-TerminalX=1280
+
+# dell first
+TerminalX=0
 TerminalY=0
-TerminalW=1238
+TerminalW=1920
 TerminalH=500
+
+# note second mon
+# TerminalX=1280
+# TerminalY=0
+# TerminalW=1238
+# TerminalH=500
 
 DESIRED_WINDOW=$(xdotool search --limit 1 --name ${QT_TITLE})
 NOT_FOUND=$?
@@ -23,7 +31,7 @@ else
   else
     xdotool windowmap "${DESIRED_WINDOW}"
     xdotool windowactivate "${DESIRED_WINDOW}"
-    xdotool windowmove "${DESIRED_WINDOW}" 1920 0
+    xdotool windowmove "${DESIRED_WINDOW}" ${TerminalX} ${TerminalY}
     # xdotool windowsize "${DESIRED_WINDOW}" 100% 50%
   fi
 fi
