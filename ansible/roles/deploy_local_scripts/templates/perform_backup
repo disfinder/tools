@@ -1,0 +1,43 @@
+#!/bin/bash
+# set -x # enable debug
+set +x # disable debug
+
+if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters"
+    echo "Usage:"
+    echo "  $0 DESTINATION_DIR"
+    exit 0
+fi
+
+echo $0
+echo $(basename $0)
+echo $(dirname $0)
+
+SCRIPT_DIRNAME=$(dirname "$0")
+source "${SCRIPT_DIRNAME}/lib/backup_functions"
+
+DESTDIR=$1
+TODAY=$(date "+%Y-%m-%d")
+ARCHIVE_DIR=${DESTDIR}/${TODAY}
+echo "Prepare: create destination dir ${ARCHIVE_DIR}"
+mkdir -p "${ARCHIVE_DIR}"
+
+GPG_HOMEDIR="/media/truecrypt21/pgp/keys_for_epm_files/"
+GPG_USER="Backup"
+
+# BACKED_DIR=/mnt/big/out/develop
+  # tar cf - ${BACKED_DIR} -P | pv -s $(du -sb /${BACKED_DIR} | awk '{print $1}') | gzip > ${ARCHIVE_DIR}/big-files.tar.gz
+  # perform_backup "${BACKED_DIR}" "${ARCHIVE_DIR}/develop.tar.gz"
+
+BACKED_DIR=/mnt/big/out/Dropbox
+# time perform_backup_with_encryption_ssl "${BACKED_DIR}" "${ARCHIVE_DIR}/dropbox.tar.gz.enc"
+time perform_backup ${BACKED_DIR}  ${ARCHIVE_DIR}/dropbox.tar.gz
+
+BACKED_DIR=/home/disfinder
+time perform_backup ${BACKED_DIR}  ${ARCHIVE_DIR}/home.tar.gz
+
+BACKED_DIR=/mnt/big/out/develop
+time perform_backup ${BACKED_DIR}  ${ARCHIVE_DIR}/develop.tar.gz
+
+BACKED_DIR=/mnt/big/common
+time perform_backup ${BACKED_DIR}  ${ARCHIVE_DIR}/common.tar.gz

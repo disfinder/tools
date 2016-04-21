@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# usage example
+#perform_backup DIR_TO_BACKUP BACKUP_FILENAME
+function perform_backup
+{
+  echo "Perform calcutation for ${1}..."
+  SIZE_TO_BACKUP=$(du -sb ${1} | awk '{print $1}')
+  echo "Size is: ${SIZE_TO_BACKUP}"
+  tar cf - "${1}" -P | pv -s ${SIZE_TO_BACKUP} | gzip -9 > "${2}"
+  echo "Done ${1}"
+}
+
+
+#perform_backup DIR_TO_BACKUP BACKUP_FILENAME GPG_HOMEDIR GPG_USER
+# /media/truecrypt21/pgp/keys_for_epm_files/
+# Backup
+function perform_backup_with_encryption_gpg
+{
+  echo "Perform calcutation for ${1}..."
+  SIZE_TO_BACKUP=$(du -sb ${1} | awk '{print $1}')
+  echo "Size is: ${SIZE_TO_BACKUP}"
+  tar cf - "${1}" -P | pv -s ${SIZE_TO_BACKUP} | gzip -9 | \
+    gpg --homedir "${3}" -r "${4}" --output "${2}" --encrypt
+  echo "Done ${1}"
+}
+
+function perform_backup_with_encryption_ssl
+{
+  echo "Perform calcutation for ${1}..."
+  SIZE_TO_BACKUP=$(du -sb ${1} | awk '{print $1}')
+  echo "Size is: ${SIZE_TO_BACKUP}"
+  tar cf - "${1}" -P | pv -s ${SIZE_TO_BACKUP} | gzip -9 | openssl enc -aes-256-cbc  -pass stdin > "${2}"
+  echo "Done ${1}"
+}
