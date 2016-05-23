@@ -44,7 +44,9 @@ raise_keys:
   - key: "XF86AudioPrev"
     raise_search: "audacious"
     raise_action: "audacious"
-
+  - key: "<Super>z"
+    raise_search: "Slack"
+    raise_action: "slack"
 common_keys:
   - key: "<Super>m"
     action: "{{ user_scripts_folder }}/chromium-mail"
