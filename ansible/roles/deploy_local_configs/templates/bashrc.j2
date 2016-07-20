@@ -163,7 +163,13 @@ alias CDG='cd  ~/develop/git/github/'
 alias CDT='cd  ~/develop/git/github/disfinder/tools/ansible'
 alias CDM='{{ ep.config.bash.alias.cdm }}'
 alias CDF='{{ ep.config.bash.alias.cdf }}'
+alias CDE='{{ ep.config.bash.alias.cde }}'
+alias delha='{{ ep.config.bash.alias.cde }}'
+
+
 alias FIXPASTE='printf "\e[?2004l"'
+alias FIXKEYBOARD='setxkbmap -layout "us,ua(unicode)"'
+alias APPLYBASHRC='ansible-playbook -i /mnt/big/out/develop/git/github/disfinder/tools/ansible/inventory/localhost /mnt/big/out/develop/git/github/disfinder/tools/ansible/playbook-local.yml --tags configs'
 alias FF_BANK='firefox --new-instance --profile ~/.mozilla/firefox/wpsazwpb.BANK/'
 
 alias gs='git status'
