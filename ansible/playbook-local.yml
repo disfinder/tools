@@ -8,6 +8,7 @@
   vars:
     user_binary_folder: "~/bin"
     user_scripts_folder: "{{ user_binary_folder}}/scripts"
+    user_bash_addons_folder: "{{ user_binary_folder}}/scripts/bash_addons"
     use_in_autodeploy: true
   connection: local
   gather_facts: no

@@ -11,6 +11,21 @@
     dest: "{{ user_home_dir }}/{{ local_screenrc_file }}"
     mode: 0644
 
+- name: Create folder for bash addons
+  file:
+    dest: "{{ user_bash_addons_folder }}"
+    state: directory
+  when: include.bash_addons is defined
+
+
+- name: Template bash addons
+  template:
+    src: "bash_addons/{{ item.key }}"
+    dest: "{{ user_bash_addons_folder }}/{{ item.key }}"
+    mode: 0644
+  with_dict: "{{ include.bash_addons }}"
+  when:  item.value|bool == True
+
 - name: Deploy local git condig file
   template:
     src: gitconfig.j2

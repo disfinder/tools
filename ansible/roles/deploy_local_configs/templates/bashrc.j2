@@ -360,3 +360,11 @@ else
 {% endif %}
 fi
 {% endif %}
+
+{%- if include.bash_addons is defined -%}
+  {%- for key, value in include.bash_addons.iteritems()  -%}
+    {%- if value|bool == true %}
+source {{ user_bash_addons_folder }}/{{ key }}
+    {% endif %}
+  {%- endfor %}
+{%- endif -%}

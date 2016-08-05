@@ -20,6 +20,10 @@ include:
   path:
     develop: true
   ps1: true
+  bash_addons:
+    mvncolor.sh: true
+    mvncolor2.sh: false
+    mvncolor3.sh: false
 
 
 ps1:
