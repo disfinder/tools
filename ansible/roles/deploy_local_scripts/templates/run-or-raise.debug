@@ -1,0 +1,16 @@
+#!/bin/bash
+set +x
+
+"$2" &
+NEW_PID=$!
+# echo new pid=$NEW_PID
+sleep 1
+WINDOWS_ARRAY=$(xdotool search --desktop 0 "$1")
+let n=0
+while read -r WINDOW; do
+  THIS_WINDOW_PID=$(xdotool getwindowpid "$WINDOW")
+  if [[ $NEW_PID = $THIS_WINDOW_PID ]]
+  then
+    echo FOUND $WINDOW
+  fi
+done <<< "$WINDOWS_ARRAY"
