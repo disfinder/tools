@@ -1,0 +1,35 @@
+---
+
+
+repositories:
+  - 'ppa:blueman/ppa'
+  - 'ppa:ansible/ansible'
+# 1322  add-apt-repository ppa:blueman/ppa
+# 1323  apt-get update
+# 1324  apt-get upgrade blueman
+
+packages:
+  - "blueman"
+  - "docker-engine"
+  - "ansible"
+  - "atom"
+  - "java"
+  - "jenkins"
+  - "keyboards-rg"
+  - "pulseaudio"
+  - "skypeforlinux"
+  - "unetbootin"
+  - "virtualbox-5.0"
+  - "virtualbox-dkms"
+  - "pulseaudio-module-bluetooth"
+  - "git-annex"
+
+packages_to_remove:
+  - "pidgin"
+  - "thunderbird"
+
+packages_extra:
+  - "linux-generic"
+  - "linux-headers-generic "
+  - "build-essential "
+  - "dkms"
