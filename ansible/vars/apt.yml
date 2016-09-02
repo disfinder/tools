@@ -23,6 +23,7 @@ packages:
   - "virtualbox-dkms"
   - "pulseaudio-module-bluetooth"
   - "git-annex"
+  - "ipython"
 
 packages_to_remove:
   - "pidgin"
