@@ -29,3 +29,7 @@
     role: deploy_local_configs
     tags: configs
     when: use_in_autodeploy
+  - name: Deploy hosts.d files
+    role: hostsd
+    tags: hosts
+    when: use_in_autodeploy

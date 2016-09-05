@@ -1,0 +1,11 @@
+---
+- name: Assemble /etc/hosts
+  become: true
+  assemble:
+    src: /mnt/big/out/develop/project/github/disfinder/tools/ansible/roles/hostsd/files
+    dest: /etc/hosts
+    delimiter: "\n### START FRAGMENT ###"
+    # src:  "{{path1 }}/{{ item }}"
+  # with_items:
+  #   - "00_hosts.j2"
+  #   - "06_dehal.j2"
