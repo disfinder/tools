@@ -1,2 +1,4 @@
 ---
 # defaults file for hostsd
+hosts_src_path: "/mnt/big/out/develop/project/github/disfinder/tools/ansible/roles/hostsd/files"
+hosts_dst_file:  "/etc/hosts"
