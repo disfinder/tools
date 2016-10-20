@@ -50,5 +50,5 @@ raise_keys:
 common_keys:
   - key: "<Super>m"
     action: "{{ user_scripts_folder }}/chromium-mail"
-  - key: "F12"
+  - key: "<Super>grave"
     action: "{{ user_scripts_folder }}/qurminator"
