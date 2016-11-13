@@ -27,6 +27,7 @@
   when:  item.value|bool == True
 
 - name: Deploy local git condig file
+  tags: git
   template:
     src: gitconfig.j2
     dest: "{{ user_home_dir }}/{{ local_gitconfig_file }}"
