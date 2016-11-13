@@ -1,0 +1,11 @@
+---
+# -------------------------------#
+#  Playbook for manipulating CQ  #
+# -------------------------------#
+- name: "Dump vars"
+  hosts:
+    -  all
+  gather_facts: yes
+  roles:
+    - common/ansible-dumpall-master
+    # - common/dump-variables
