@@ -1,0 +1,6 @@
+---
+# tasks file for bashprofile
+
+
+- include: 02-macos.yml
+  when: ansible_os_family == "Darwin"
