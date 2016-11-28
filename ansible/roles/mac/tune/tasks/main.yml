@@ -22,3 +22,21 @@
 # Commenting the following line from /etc/ssh_config file on my Mac was the solution for me:
 
 #   SendEnv LANG LC_*
+
+
+# ctrl+arrows in iterm2
+# bash
+#
+# Just add the following to ~/.inputrc:
+#
+# "\e[1;5D": backward-word
+# "\e[1;5C": forward-word
+#
+# zsh
+#
+# zsh by default does not use the readline library and therefore won't read ~/.inputrc. To get the same functionality, you could add the following to your ~/.zshrc – this again would use the alt key:
+#
+# bindkey -e
+# bindkey '^[[1;9C' forward-word
+# bindkey '^[[1;9D' backward-word
+# http://superuser.com/questions/357355/how-can-i-get-controlleft-arrow-to-go-back-one-word-in-iterm2
