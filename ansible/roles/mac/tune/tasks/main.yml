@@ -1,0 +1,10 @@
+---
+# tasks file for tune
+
+# after install Vagrant we need to fix curl to fix problem:
+#The box 'ubuntu/trusty64' could not be found or could n
+- name: Fix Vagrant curl
+  file:
+    dest: /opt/vagrant/embedded/bin/curl
+    state: absent
+  become: true
