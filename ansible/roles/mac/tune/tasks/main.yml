@@ -8,3 +8,10 @@
     dest: /opt/vagrant/embedded/bin/curl
     state: absent
   become: true
+
+
+#TODO: installs via brew
+# brew install groovy
+# brew install vagrant-completetion
+# brew install vagrant-completion
+# brew install homebrew/completions/vagrant-completion
