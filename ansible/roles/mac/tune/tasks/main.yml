@@ -16,7 +16,7 @@
 # brew install vagrant-completion
 # brew install homebrew/completions/vagrant-completion
 # brew install bash-completion
-
+# brew install coreutils
 
 # warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file
 # Commenting the following line from /etc/ssh_config file on my Mac was the solution for me:
